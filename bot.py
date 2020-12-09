@@ -24,6 +24,7 @@ def authors_nsfw_percentage(author):
 for submission in subreddit.stream.submissions():
     author = submission.author
     nsfw_percentage = authors_nsfw_percentage(author)
+    # print(author, nsfw_percentage)
     if nsfw_percentage > 0.5:
         submission.report("User is likely a porn bot. Over half of their submissions are to NSFW subreddits.")
-        submission.reply("This post has been reported to the moderators and /u/SabreYT has been tagged. More than half of the user's submissions are to (non-gonwild) NSFW subreddits\n^(I am a bot created by /u/travisdoesmath)")
+        submission.reply("This post has been reported to the moderators and /u/SabreYT has been tagged.\n\nMore than half of the user's submissions are to (non-gonwild) NSFW subreddits\n\n---\n\n^(I am a bot created by /u/travisdoesmath)")
